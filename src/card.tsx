@@ -17,6 +17,17 @@ function toCssClass(color: Color) {
   }
 }
 
+export type Card = {
+  name: string;
+  color: Color;
+  cost: number;
+  image: string;
+  rules: Rule[];
+  constructionCost: number;
+  power: number;
+  toughness: number;
+}
+
 export function Card({
   color,
   cost,
@@ -54,7 +65,7 @@ function Rules({
 }) {
   return (
     <div className={styles.rules}>
-      <div className={styles.ruleText}>
+      <div className={styles.ruleTextWrapper}>
         {rules[0] && <Rule rule={rules[0]} />}
         {rules.length > 1 && rules.slice(1).map(r => (
           <>
@@ -69,33 +80,51 @@ function Rules({
   );
 }
 
-type Rule =
+export type Rule =
   | { type: "plain"; text: string }
   | { type: "flavor"; text: string }
-  | { type: "labeled"; label: string; text: string };
+  | { type: "labeled"; label: string; color: string; text: string };
 
 function Rule({ rule }: { rule: Rule }) {
   switch (rule.type) {
     case "plain":
-      return <div>{rule.text}</div>;
+      return <div className={styles.ruleText}>{rule.text}</div>;
     case "flavor":
-      return <div style={{
-        fontStyle: "italic",
-        opacity: "0.7",
-        fontSize: "0.5rem",
-      }}>{rule.text}</div>;
+      return <div
+        className={styles.ruleText}
+        style={{
+          fontStyle: "italic",
+          opacity: "0.7",
+          fontSize: "0.5rem",
+        }}
+      >
+        {rule.text}
+      </div>;
     case "labeled":
-      return <Labeled label={rule.label}>{rule.text}</Labeled>;
+      return <Labeled
+        label={rule.label}
+        color={rule.color}
+      >{rule.text}</Labeled>;
     default:
       return null;
   }
 }
 
-function Labeled({ label, children }: { label: string; children: ReactNode }) {
+function Labeled({
+  label,
+  color,
+  children,
+}: {
+  label: string;
+  color: string;
+  children: ReactNode
+}) {
   return (
-    <div className={styles.labeled}>
-      <div className={styles.label}>{label}</div>
-      <div>{children}</div>
+    <div>
+      <span className={styles.label} style={{ background: color }}>
+        {label}
+      </span>
+      <span className={styles.ruleText}>{children}</span>
     </div>
   );
 }
