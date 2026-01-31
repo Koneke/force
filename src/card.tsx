@@ -28,29 +28,19 @@ export type Card = {
   toughness: number;
 }
 
-export function Card({
-  color,
-  cost,
-  constructionCost,
-  name,
-  rules,
-}: {
-  color: Color;
-  cost: number;
-  constructionCost: number;
-  name: string;
-  rules: Rule[];
-}) {
+export function Card({ card }: { card: Card }) {
   return (
-    <div className={classNames(styles.root, toCssClass(color))}>
-      <img src="./warrior-princess.png" className={styles.image} />
+    <div className={classNames(styles.root, toCssClass(card.color))}>
+      <img src={`./${card.image}.png`} className={styles.image} />
       <div className={styles.header}>
-        <div className={styles.playCost}>{cost}</div>
-        <div className={styles.name}>{name}</div>
+        <div className={styles.playCost}>{card.cost}</div>
+        <div className={styles.name}>{card.name}</div>
       </div>
       <Rules
-        rules={rules}
-        constructionCost={constructionCost}
+        rules={card.rules}
+        constructionCost={card.constructionCost}
+        power={card.power}
+        toughness={card.toughness}
       />
     </div>
   );
@@ -58,10 +48,14 @@ export function Card({
 
 function Rules({
   constructionCost,
-  rules
+  rules,
+  power,
+  toughness
 }: {
   constructionCost: number;
   rules: Rule[]
+  power: number,
+  toughness: number,
 }) {
   return (
     <div className={styles.rules}>
@@ -75,7 +69,7 @@ function Rules({
         ))}
       </div>
       <div className={styles.constructionCost}>{constructionCost}</div>
-      <div className={styles.power}>1 / 1</div>
+      <div className={styles.power}>{power} / {toughness}</div>
     </div>
   );
 }
