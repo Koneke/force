@@ -5,6 +5,11 @@
   --card-green: #158315;
   --text-light: #ddd;
   --text-dark: #111;
+  --outline:
+    -1px -1px 1px black,
+     1px -1px 1px black,
+    -1px  1px 1px black,
+     1px  1px 1px black;
 
   background-color: var(--card-color);
   color: var(--text-color);
@@ -20,6 +25,7 @@
   font-size: 0.675rem;
 
   position: relative;
+  overflow: hidden;
 }
 
 .cardRed {
@@ -44,6 +50,14 @@
 
 // --- //
 
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -57,31 +71,21 @@
 }
 
 .name {
-  // --inset: 4rem;
-  // position: absolute;
-  // top: 1rem;
-  // left: var(--inset);
-  // // right: var(--inset);
-  // right: 1rem;
-
   height: 2rem;
   display: flex;
   align-items: center;
-  // justify-content: center;
   padding: 0 1rem;
   box-sizing: border-box;
   background-color: #333;
   border-radius: 0.25rem;
   font-size: 1rem;
   font-weight: 700;
+  text-shadow: var(--outline);
 }
 
 
 .playCost {
   --size: 2rem;
-  // position: absolute;
-  // top: 1rem;
-  // left: 1rem;
   aspect-ratio: 1;
   width: var(--size);
   border-radius: var(--size);
@@ -92,6 +96,7 @@
   justify-content: center;
   font-size: 1rem;
   font-weight: 700;
+  text-shadow: var(--outline);
 }
 
 .rules {
@@ -101,6 +106,7 @@
   box-sizing: border-box;
   position: relative;
   border-radius: 0.5rem;
+  text-shadow: var(--outline);
 }
 
 .ruleText {
@@ -126,6 +132,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  text-shadow: var(--outline);
 }
 
 .power {
@@ -139,6 +146,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  text-shadow: var(--outline);
 }
 
 .labeled {

@@ -32,6 +32,7 @@ export function Card({
 }) {
   return (
     <div className={classNames(styles.root, toCssClass(color))}>
+      <img src="./warrior-princess.png" className={styles.image} />
       <div className={styles.header}>
         <div className={styles.playCost}>{cost}</div>
         <div className={styles.name}>{name}</div>
@@ -44,19 +45,15 @@ export function Card({
   );
 }
 
-// function Rules({ name, text }: { name: string; text: string }) {
 function Rules({
-  // name,
   constructionCost,
   rules
 }: {
-  // name: string;
   constructionCost: number;
   rules: Rule[]
 }) {
   return (
     <div className={styles.rules}>
-      {/*<div className={styles.name}>{name}</div>*/}
       <div className={styles.ruleText}>
         {rules[0] && <Rule rule={rules[0]} />}
         {rules.length > 1 && rules.slice(1).map(r => (
@@ -82,7 +79,11 @@ function Rule({ rule }: { rule: Rule }) {
     case "plain":
       return <div>{rule.text}</div>;
     case "flavor":
-      return <div style={{ fontStyle: "italic" }}>{rule.text}</div>;
+      return <div style={{
+        fontStyle: "italic",
+        opacity: "0.7",
+        fontSize: "0.5rem",
+      }}>{rule.text}</div>;
     case "labeled":
       return <Labeled label={rule.label}>{rule.text}</Labeled>;
     default:
