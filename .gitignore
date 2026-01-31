@@ -1,3 +1,6 @@
+# Affinity
+*.af~lock~
+
 # Logs
 logs
 *.log
