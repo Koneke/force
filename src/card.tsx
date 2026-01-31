@@ -17,18 +17,20 @@ function toCssClass(color: Color) {
   }
 }
 
-export type Card = {
+export type CreatureCard = {
+  type: "creature";
   name: string;
   color: Color;
   cost: number;
   image: string;
   rules: Rule[];
+  nodes?: ReactNode[]
   constructionCost: number;
   power: number;
   toughness: number;
 }
 
-export function Card({ card }: { card: Card }) {
+export function CreatureCard({ card }: { card: CreatureCard }) {
   return (
     <div className={classNames(styles.root, toCssClass(card.color))}>
       <img src={`./${card.image}.png`} className={styles.image} />
@@ -38,6 +40,7 @@ export function Card({ card }: { card: Card }) {
       </div>
       <Rules
         rules={card.rules}
+        nodes={card.nodes}
         constructionCost={card.constructionCost}
         power={card.power}
         toughness={card.toughness}
@@ -49,11 +52,13 @@ export function Card({ card }: { card: Card }) {
 function Rules({
   constructionCost,
   rules,
+  nodes,
   power,
   toughness
 }: {
   constructionCost: number;
   rules: Rule[]
+  nodes?: ReactNode[] | undefined
   power: number,
   toughness: number,
 }) {
@@ -65,6 +70,14 @@ function Rules({
           <>
             <Divider />
             <Rule rule={r} />
+          </>
+        ))}
+        {nodes?.at(0) && <div className={styles.ruleText}>{nodes.at(0)}</div>}
+        {nodes && nodes.length > 1 && nodes.slice(1).map(node => (
+          <>
+            <Divider />
+            {/*<Rule rule={r} />*/}
+            <div className={styles.ruleText}>{node}</div>
           </>
         ))}
       </div>
@@ -82,10 +95,10 @@ export type Rule =
 function Rule({ rule }: { rule: Rule }) {
   switch (rule.type) {
     case "plain":
-      return <div className={styles.ruleText}>{rule.text}</div>;
+      return <BodyText>{rule.text}</BodyText>
     case "flavor":
       return <div
-        className={styles.ruleText}
+        className={styles.bodyText}
         style={{
           fontStyle: "italic",
           opacity: "0.7",
@@ -98,7 +111,9 @@ function Rule({ rule }: { rule: Rule }) {
       return <Labeled
         label={rule.label}
         color={rule.color}
-      >{rule.text}</Labeled>;
+      >
+        {rule.text}
+      </Labeled>;
     default:
       return null;
   }
@@ -115,14 +130,46 @@ function Labeled({
 }) {
   return (
     <div>
-      <span className={styles.label} style={{ background: color }}>
-        {label}
-      </span>
-      <span className={styles.ruleText}>{children}</span>
+      <Label color={color}>{label}</Label>
+      <BodyText>{children}</BodyText>
     </div>
   );
 }
 
+export function Label({
+  color,
+  children,
+}: {
+  color: string;
+  children: ReactNode
+}) {
+  return (
+    <span className={styles.label} style={{ background: color }}>
+      {children}
+    </span>
+  )
+}
+
 function Divider() {
   return <div className={styles.divider} />;
+}
+
+export function BodyText({
+  children
+} : {
+  children: ReactNode
+}) {
+  return (
+    <span className={styles.bodyText}>{children}</span>
+  )
+}
+
+export function Keyword({
+  children
+} : {
+  children: ReactNode
+}) {
+  return (
+    <span className={styles.keyword}>{children}</span>
+  )
 }

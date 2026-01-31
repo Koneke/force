@@ -1,5 +1,6 @@
-import { Card, type Rule } from "./card";
+import { BodyText, CreatureCard, Keyword, Label, type Rule } from "./card";
 import "./App.css";
+import type { ReactNode } from "react";
 
 const energy = "🜍"
 
@@ -10,6 +11,13 @@ function trigger(text: string): Rule {
     color: "red",
     text,
   })
+}
+
+function Trigger({ children }: { children: ReactNode }): ReactNode {
+  return (<>
+    <Label color="red">Trigger</Label>
+    {children}
+  </>)
 }
 
 function exhaust(text: string): Rule {
@@ -28,7 +36,8 @@ function flavor(text: string): Rule {
   })
 }
 
-const backstreetBrawler: Card = {
+const backstreetBrawler: CreatureCard = {
+  type: "creature",
   name: "Backstreet Brawler",
   color: "black",
   cost: 3,
@@ -37,12 +46,29 @@ const backstreetBrawler: Card = {
     trigger("When this card is played, you may sacrifice another creature: Destroy target creature."),
     flavor("A dirty job, but someone's gotta do it"),
   ],
+  // FIXME: wip stuff
+  nodes: [
+    // <>
+    //   <Label color="#917313">Piss-time</Label>
+    //   <BodyText>Target creature gains</BodyText>
+    //   <Keyword>Blocker</Keyword>
+    //   <BodyText>until end of turn.</BodyText>
+    // </>,
+    // <>
+    //   <Trigger>
+    //     <BodyText>
+    //       When this card is played, you may sacrifice another creature: Destroy target creature.
+    //     </BodyText>
+    //   </Trigger>
+    // </>
+  ],
   constructionCost: 2,
   power: 1,
   toughness: 1,
 }
 
-const scornedBingus: Card = {
+const scornedBingus: CreatureCard = {
+  type: "creature",
   name: "Scorned Bingus",
   color: "red",
   cost: 2,
@@ -56,7 +82,8 @@ const scornedBingus: Card = {
   toughness: 2,
 }
 
-const savvyTrader: Card = {
+const savvyTrader: CreatureCard = {
+  type: "creature",
   name: "Savvy Trader",
   color: "yellow",
   cost: 2,
@@ -70,7 +97,8 @@ const savvyTrader: Card = {
   toughness: 2,
 }
 
-const earthBreaker: Card = {
+const earthBreaker: CreatureCard = {
+  type: "creature",
   name: "Earthbreaker",
   color: "green",
   cost: 3,
@@ -88,10 +116,10 @@ function App() {
   console.log("bing");
   return (
     <div className="wrapper">
-      <Card card={backstreetBrawler} />
-      <Card card={scornedBingus} />
-      <Card card={savvyTrader} />
-      <Card card={earthBreaker} />
+      <CreatureCard card={backstreetBrawler} />
+      <CreatureCard card={scornedBingus} />
+      <CreatureCard card={savvyTrader} />
+      <CreatureCard card={earthBreaker} />
     </div>
   );
 }
