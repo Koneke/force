@@ -76,7 +76,7 @@ export const blackmarketDealer: CreatureCard = {
   name: "Blackmarket Dealer",
   color: "black",
   cost: 4,
-  image: "backstreet-brawler",
+  image: "blackmarket-dealer",
   nodes: [
     <>
       <Trigger />
