@@ -1,5 +1,5 @@
 import { CreatureCard } from "../card";
-import { BodyText, Flavor } from "../typography";
+import { BodyText, Flavor, Keyword } from "../typography";
 import { Death, Enter, Exhaust, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
 
@@ -8,7 +8,7 @@ export const southstreetVandal: CreatureCard = {
   name: "Southstreet Vandal",
   color: "black",
   cost: 2,
-  image: "southstreet-vandal",
+  image: "backstreet-brawler",
   nodes: [
     <>
       <Enter />
@@ -22,6 +22,29 @@ export const southstreetVandal: CreatureCard = {
     </Flavor>,
   ],
   constructionCost: 1,
+  power: 3,
+  toughness: 1,
+  tags: ["starter"],
+}
+
+export const recklessScavenger: CreatureCard = {
+  type: "creature",
+  name: "Reckless Scavenger",
+  color: "black",
+  cost: 1,
+  image: "reckless-scavenger",
+  nodes: [
+    <>
+      <Trigger />
+      <BodyText>
+        When this creature attacks, mill 1.
+      </BodyText>
+    </>,
+    <Flavor>
+      People throw good stuff out way too carelessly.
+    </Flavor>,
+  ],
+  constructionCost: 1,
   power: 2,
   toughness: 1,
   tags: ["starter"],
@@ -32,19 +55,19 @@ export const triggerman: CreatureCard = {
   name: "Triggerman",
   color: "black",
   cost: 3,
-  image: "backstreet-brawler",
+  image: "southstreet-vandal",
   nodes: [
     <>
       <Exhaust />
-      <BodyText>Sacrifice another creature, gain 2 {SYMBOL_ENERGY}.</BodyText>
+      <BodyText>Sacrifice another creature, gain 2{SYMBOL_ENERGY}.</BodyText>
     </>,
     <Flavor>
       A dirty job, but someone's gotta do it
     </Flavor>,
   ],
   constructionCost: 2,
-  power: 1,
-  toughness: 3,
+  power: 2,
+  toughness: 2,
   tags: ["generator"],
 }
 
@@ -67,7 +90,7 @@ export const blackmarketDealer: CreatureCard = {
   ],
   constructionCost: 3,
   power: 2,
-  toughness: 2,
+  toughness: 3,
   tags: ["extender"],
 }
 
@@ -91,7 +114,7 @@ export const underworldAgitator: CreatureCard = {
     </Flavor>,
   ],
   constructionCost: 5,
-  power: 5,
+  power: 3,
   toughness: 3,
   tags: ["payoff"],
 }
@@ -107,7 +130,7 @@ export const lastborn: CreatureCard = {
       <Death />
       <BodyText>
         You may pay 2{SYMBOL_ENERGY},
-        then summon a creature with cost 3 or less from your graveyard
+        then summon a creature with cost 4 or less from your graveyard
         to this creature's cell.
       </BodyText>
     </>,
@@ -115,8 +138,8 @@ export const lastborn: CreatureCard = {
       It sure runs in the family.
     </Flavor>,
   ],
-  constructionCost: 3,
-  power: 2,
+  constructionCost: 2,
+  power: 1,
   toughness: 1,
   tags: ["extender"],
 }
@@ -125,33 +148,74 @@ export const enforcer: CreatureCard = {
   type: "creature",
   name: "Enforcer",
   color: "black",
-  cost: 3,
+  cost: 2,
   image: "enforcer",
   nodes: [
     <>
-      <Enter />
-      <BodyText>
-        Destroy target creature.
-      </BodyText>
-    </>,
-    <>
       <Exhaust />
       <BodyText>
-        Pay 3{SYMBOL_ENERGY}: destroy target creature.
+        Pay 2{SYMBOL_ENERGY}: destroy target creature.
       </BodyText>
     </>,
   ],
   constructionCost: 3,
-  power: 3,
+  power: 1,
   toughness: 3,
   tags: ["interaction"],
 }
 
+export const securityDetail: CreatureCard = {
+  type: "creature",
+  name: "Security Detail",
+  color: "black",
+  cost: 3,
+  image: "security-detail",
+  nodes: [
+    <Keyword>Blocker</Keyword>,
+    <>
+      <Trigger />
+      <BodyText>
+        When this creature fights, mill 2.
+      </BodyText>
+    </>,
+  ],
+  constructionCost: 3,
+  power: 2,
+  toughness: 4,
+  tags: ["protection"],
+}
+
+export const blackmailer: CreatureCard = {
+  type: "creature",
+  name: "Extortionist",
+  color: "black",
+  cost: 4,
+  image: "blackmailer",
+  nodes: [
+    <>
+      <Enter />
+      <BodyText>
+        Opponent sacrifices a creature
+      </BodyText>
+    </>,
+    <Flavor>
+      You don't HAVE to pay up. But you probably want to.
+    </Flavor>,
+  ],
+  constructionCost: 5,
+  power: 4,
+  toughness: 3,
+  tags: ["payoff"],
+}
+
 export const black = [
-  triggerman,
   southstreetVandal,
+  recklessScavenger,
+  triggerman,
   blackmarketDealer,
-  underworldAgitator,
   lastborn,
   enforcer,
+  securityDetail,
+  underworldAgitator,
+  blackmailer,
 ]

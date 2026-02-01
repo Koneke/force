@@ -37,3 +37,7 @@ export function Once() {
 export function Death() {
   return <Label color="black">Death</Label>;
 }
+
+export function Ambush() {
+  return <Label color="purple">Ambush</Label>;
+}

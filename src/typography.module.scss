@@ -15,4 +15,8 @@
   font-weight: 700;
   text-shadow: var(--outline);
   margin: 0 0.25rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }

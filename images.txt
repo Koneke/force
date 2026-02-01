@@ -14,6 +14,9 @@ south-street vandal https://unsplash.com/photos/a-couple-of-men-standing-next-to
 lastborn https://unsplash.com/photos/a-man-with-a-baseball-bat-leaning-against-a-wall-KQYgcK_Ouek
 underworld agitator https://unsplash.com/photos/a-woman-in-a-black-mask-holding-a-gun-pA_Ix72faxs
 enforcer https://unsplash.com/photos/man-in-black-framed-eyeglasses-VzQWVqHOCaE
+reckless scavenger https://unsplash.com/photos/man-in-black-leather-jacket-standing-beside-white-and-black-post-y-ShhXIj_kU
+extortioner https://unsplash.com/photos/mens-black-pullover-hoodie-S2qA7JhjI6Y
+security detail https://unsplash.com/photos/man-in-green-crew-neck-top-standing-outdoors-Hj5qdyQ2PmE
 
 
 pattern

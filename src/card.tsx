@@ -17,6 +17,19 @@ function toCssClass(color: Color) {
   }
 }
 
+function toPipColor(color: Color) {
+  switch (color) {
+    case "black":
+      return "#222";
+    case "red":
+      return "#da1616";
+    case "yellow":
+      return "#c4d111";
+    case "green":
+      return "#158315";
+  }
+}
+
 export type CreatureCard = {
   type: "creature";
   name: string;
@@ -47,12 +60,14 @@ export function CreatureCard({ card }: { card: CreatureCard }) {
 }
 
 function RulesBox({
+  color,
   constructionCost,
   nodes,
   power,
   toughness,
   tags,
 }: {
+  color: CreatureCard["color"];
   constructionCost: number;
   nodes: ReactNode[] | undefined
   power: CreatureCard["power"],
@@ -76,6 +91,11 @@ function RulesBox({
         )}
       </div>
       <div className={styles.constructionCost}>{constructionCost}</div>
+      <div className={styles.colors}>
+        <div className={styles.pip} style={(
+          { "--color": toPipColor(color) }
+        ) as React.CSSProperties } />
+      </div>
       <div className={styles.power}>{power} / {toughness}</div>
     </div>
   );
