@@ -1,6 +1,24 @@
-https://unsplash.com/photos/young-red-haired-medieval-fantasy-sorceress-stands-in-the-forest-looking-directly-into-the-camera-and-with-a-determined-gaze-she-draws-her-sword-creative-dramatic-color-retouching-and-grain-added-part-of-a-series-HJ-S8A72cKQ
-https://unsplash.com/photos/a-man-standing-in-a-field-of-green-plants-RA6HarTf-GI
-https://unsplash.com/photos/people-gathering-in-a-concert-_YE3BvJLiTg
-https://unsplash.com/photos/a-couple-of-men-standing-next-to-a-pile-of-vegetables-6fkxRn5YAg8
-https://unsplash.com/photos/spiral-ladder-photography-zaM9LhySx_0
-https://unsplash.com/photos/a-couple-of-men-standing-next-to-each-other-GiIpEOF5JUo
+creatures
+red
+scorned bingus https://unsplash.com/photos/young-red-haired-medieval-fantasy-sorceress-stands-in-the-forest-looking-directly-into-the-camera-and-with-a-determined-gaze-she-draws-her-sword-creative-dramatic-color-retouching-and-grain-added-part-of-a-series-HJ-S8A72cKQ
+
+green
+earthbreaker https://unsplash.com/photos/a-man-standing-in-a-field-of-green-plants-RA6HarTf-GI
+
+yellow
+savvy trader https://unsplash.com/photos/a-couple-of-men-standing-next-to-a-pile-of-vegetables-6fkxRn5YAg8
+
+black
+backstreet brawler https://unsplash.com/photos/people-gathering-in-a-concert-_YE3BvJLiTg
+south-street vandal https://unsplash.com/photos/a-couple-of-men-standing-next-to-each-other-GiIpEOF5JUo
+lastborn https://unsplash.com/photos/a-man-with-a-baseball-bat-leaning-against-a-wall-KQYgcK_Ouek
+underworld agitator https://unsplash.com/photos/a-woman-in-a-black-mask-holding-a-gun-pA_Ix72faxs
+enforcer https://unsplash.com/photos/man-in-black-framed-eyeglasses-VzQWVqHOCaE
+
+
+pattern
+cardback https://unsplash.com/photos/spiral-ladder-photography-zaM9LhySx_0
+green https://unsplash.com/photos/red-plant-leaves-wKTF65TcReY
+green-2 https://unsplash.com/photos/green-leaf-plants-xljtGZ2-P3Y
+yellow https://unsplash.com/photos/brown-white-and-yellow-floral-pattern-aWBPk_GBaCk
+black https://unsplash.com/photos/text-uymG7UVPXpI

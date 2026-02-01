@@ -59,6 +59,15 @@
   object-fit: contain;
 }
 
+.pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.5;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -102,6 +111,7 @@
 .rules {
   background-color: #aaaa;
   padding: 1rem 1rem 2rem 1rem;
+  padding: 0.25rem 1rem 1.5rem 1rem;
   margin: 0 1rem 2rem 1rem;
   box-sizing: border-box;
   position: relative;
@@ -132,6 +142,7 @@
   left: 0;
   background-color: #333;
   border-radius: 0.25rem;
+  border-top-left-radius: 0;
   height: 2rem;
   display: flex;
   align-items: center;
@@ -149,6 +160,7 @@
   right: 0;
   background-color: #333;
   border-radius: 0.25rem;
+  border-top-right-radius: 0;
   height: 2rem;
   display: flex;
   align-items: center;
@@ -158,4 +170,11 @@
 
   font-size: 1rem;
   font-weight: 700;
+}
+
+.tags {
+  opacity: 0.8;
+  font-Size: 0.5rem;
+  text-shadow: var(--outline);
+  margin-top: -0.25rem;
 }

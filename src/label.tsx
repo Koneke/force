@@ -29,3 +29,11 @@ export function Exhaust() {
 export function Enter() {
   return <Label color="blue">Enter</Label>;
 }
+
+export function Once() {
+  return <Label color="purple">Once</Label>;
+}
+
+export function Death() {
+  return <Label color="black">Death</Label>;
+}

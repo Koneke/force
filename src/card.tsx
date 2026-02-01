@@ -27,22 +27,21 @@ export type CreatureCard = {
   constructionCost: number;
   power: number;
   toughness: number;
+
+  // For documentation while developing
+  tags?: string[]
 }
 
 export function CreatureCard({ card }: { card: CreatureCard }) {
   return (
     <div className={classNames(styles.root, toCssClass(card.color))}>
+      <img src={`./bg-${card.color}.png`} className={styles.pattern} />
       <img src={`./${card.image}.png`} className={styles.image} />
       <div className={styles.header}>
         <div className={styles.playCost}>{card.cost}</div>
         <div className={styles.name}>{card.name}</div>
       </div>
-      <RulesBox
-        nodes={card.nodes}
-        constructionCost={card.constructionCost}
-        power={card.power}
-        toughness={card.toughness}
-      />
+      <RulesBox {...card} />
     </div>
   );
 }
@@ -51,12 +50,14 @@ function RulesBox({
   constructionCost,
   nodes,
   power,
-  toughness
+  toughness,
+  tags,
 }: {
   constructionCost: number;
   nodes: ReactNode[] | undefined
-  power: number,
-  toughness: number,
+  power: CreatureCard["power"],
+  toughness: CreatureCard["toughness"],
+  tags?: CreatureCard["tags"]
 }) {
   return (
     <div className={styles.rules}>
@@ -68,6 +69,11 @@ function RulesBox({
             <span>{node}</span>
           </>
         ))}
+        {tags && (
+          <span className={styles.tags}>
+            {tags.map(t => "#" + t).join(", ")}
+          </span>
+        )}
       </div>
       <div className={styles.constructionCost}>{constructionCost}</div>
       <div className={styles.power}>{power} / {toughness}</div>
