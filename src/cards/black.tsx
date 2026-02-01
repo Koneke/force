@@ -13,7 +13,7 @@ export const southstreetVandal: CreatureCard = {
     <>
       <Enter />
       <BodyText>
-        Mill 3 cards.
+        Mill 2 cards.
       </BodyText>
     </>,
     <Flavor>
@@ -154,7 +154,7 @@ export const enforcer: CreatureCard = {
     <>
       <Exhaust />
       <BodyText>
-        Pay 2{SYMBOL_ENERGY}: destroy target creature.
+        Pay 2{SYMBOL_ENERGY}: deal 2 damage to target creature.
       </BodyText>
     </>,
   ],
@@ -175,12 +175,12 @@ export const securityDetail: CreatureCard = {
     <>
       <Trigger />
       <BodyText>
-        When this creature fights, mill 2.
+        When this creature fights, mill 1.
       </BodyText>
     </>,
   ],
   constructionCost: 3,
-  power: 2,
+  power: 1,
   toughness: 4,
   tags: ["protection"],
 }
@@ -208,6 +208,45 @@ export const blackmailer: CreatureCard = {
   tags: ["payoff"],
 }
 
+export const infiltrator: CreatureCard = {
+  type: "creature",
+  name: "Infiltrator",
+  color: "black",
+  cost: 3,
+  image: "infiltrator",
+  nodes: [
+    <Keyword>Evasive</Keyword>,
+    <Flavor>
+      Always watching. Always.
+    </Flavor>,
+  ],
+  constructionCost: 3,
+  power: 2,
+  toughness: 1,
+}
+
+export const treasureDiver: CreatureCard = {
+  type: "creature",
+  name: "Treasure Diver",
+  color: "black",
+  cost: 2,
+  image: "treasure-diver",
+  nodes: [
+    <>
+      <Enter />
+      <BodyText>
+        Return a creature card from your graveyard to your hand.
+      </BodyText>
+    </>,
+    <Flavor>
+      One man's trash.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  power: 1,
+  toughness: 2,
+}
+
 export const black = [
   southstreetVandal,
   recklessScavenger,
@@ -218,4 +257,6 @@ export const black = [
   securityDetail,
   underworldAgitator,
   blackmailer,
+  infiltrator,
+  treasureDiver,
 ]
