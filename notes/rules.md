@@ -17,3 +17,15 @@
 - If no exhausted, go face
 - Attacking exhausts
 - *Blocker*s can intercept _ONE_ attack per turn, and it doesn't exhaust. They have to be rested.
+
+## REVISION!
+
+- Attacker picks a target, face or any _EXHAUSTED_ creature
+- Defender can _INTERCEPT_ with any non-exhausted creature, to fight with that instead of target
+- Attacking exhausts
+- Intercepting exhausts
+
+# Keywords
+
+- Infiltrator: Can't be intercepted
+- Blocker: Can intercept once per turn while exhausted
