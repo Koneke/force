@@ -102,7 +102,7 @@ export const composter: CreatureCard = {
   type: "creature",
   name: "Composter",
   color: "green",
-  cost: 3,
+  cost: 2,
   image: "farmer",
   nodes: [
     <>
@@ -122,6 +122,101 @@ export const composter: CreatureCard = {
   tags: ["extender"],
 }
 
+export const naturesReclaimant: CreatureCard = {
+  type: "creature",
+  name: "Nature's Reclaimant",
+  color: "green",
+  cost: 3,
+  image: "farmer",
+  nodes: [
+    <>
+      <Enter />
+      <BodyText>
+        Replace target creature with a Sapling token.
+      </BodyText>
+    </>,
+    <Flavor>
+      Nature will still be here long after we're gone. So why wait?
+    </Flavor>
+  ],
+  constructionCost: 3,
+  power: 2,
+  toughness: 3,
+  tags: ["interaction"],
+}
+
+export const beastOfBurden: CreatureCard = {
+  type: "creature",
+  name: "Beast of Burden",
+  color: "green",
+  cost: 3,
+  image: "farmer",
+  nodes: [
+    <Keyword>Blocker</Keyword>,
+    <Flavor>
+      A helping hand for heavy days. Helping hoof?
+    </Flavor>
+  ],
+  constructionCost: 2,
+  power: 0,
+  toughness: 5,
+  tags: ["interaction"],
+}
+
+export const lifetender: CreatureCard = {
+  type: "creature",
+  name: "Lifetender",
+  color: "green",
+  cost: 3,
+  image: "farmer",
+  nodes: [
+    <BodyText>Adjacent creatures gain +1/+1</BodyText>,
+    <Flavor>
+      We're nothing without our friends, so take my hand.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  power: 1,
+  toughness: 3,
+  tags: ["identity"],
+}
+
+export const nightwatchman: CreatureCard = {
+  type: "creature",
+  name: "Nightwatchman",
+  color: "green",
+  cost: 4,
+  image: "farmer",
+  nodes: [
+    <BodyText>This creature gains +1/+0 for each adjacent creature.</BodyText>,
+    <Flavor>
+      The night is dark and full of horrors, luckily, Jonah is out there as well.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  power: 2,
+  toughness: 4,
+  tags: ["consistency"],
+}
+
+export const strappingYoungLad: CreatureCard = {
+  type: "creature",
+  name: "Strapping Young Lad",
+  color: "green",
+  cost: 1,
+  image: "farmer",
+  nodes: [
+    <BodyText>You may replace a Sapling when playing this card. If you do, it gains power equal to that Sapling's toughness.</BodyText>,
+    <Flavor>
+      Barely outta the crib, but a farmboy's built different. Eat your veggies, kids.
+    </Flavor>
+  ],
+  constructionCost: 4,
+  power: 1,
+  toughness: 2,
+  tags: ["consistency", "identity"],
+}
+
 // NOTE: do we need to mark tokens somehow extra?
 export const sapling: CreatureCard = {
   type: "creature",
@@ -135,7 +230,10 @@ export const sapling: CreatureCard = {
       <BodyText>
         Gain +0/+1.
       </BodyText>
-    </>
+    </>,
+    <Flavor>
+      The tiniest of sprout may grow into the mightiest of oaks.
+    </Flavor>
   ],
   constructionCost: 0,
   power: 0,
@@ -149,5 +247,10 @@ export const green = [
   greenReaper,
   motherOfAllBloom,
   composter,
+  naturesReclaimant,
+  beastOfBurden,
+  lifetender,
+  nightwatchman,
+  strappingYoungLad,
   sapling,
 ]
