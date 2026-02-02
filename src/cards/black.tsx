@@ -155,8 +155,11 @@ export const enforcer: CreatureCard = {
       <Exhaust />
       <BodyText>
         Pay 2{SYMBOL_ENERGY}: deal 2 damage to target creature.
-      </BodyText>
+      </BodyText>,
     </>,
+    <Flavor>
+      On the street. Round the corner. Under ya bed.
+    </Flavor>,
   ],
   constructionCost: 3,
   power: 1,
@@ -223,6 +226,7 @@ export const infiltrator: CreatureCard = {
   constructionCost: 3,
   power: 2,
   toughness: 1,
+  tags: ["consistency?"],
 }
 
 export const treasureDiver: CreatureCard = {
@@ -245,6 +249,7 @@ export const treasureDiver: CreatureCard = {
   constructionCost: 3,
   power: 1,
   toughness: 2,
+  tags: ["extender"],
 }
 
 export const black = [
