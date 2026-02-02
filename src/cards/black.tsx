@@ -67,7 +67,7 @@ export const triggerman: CreatureCard = {
   ],
   constructionCost: 2,
   power: 2,
-  toughness: 2,
+  toughness: 3,
   tags: ["generator"],
 }
 
@@ -248,7 +248,7 @@ export const treasureDiver: CreatureCard = {
   ],
   constructionCost: 3,
   power: 1,
-  toughness: 2,
+  toughness: 3,
   tags: ["extender"],
 }
 

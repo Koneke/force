@@ -13,7 +13,7 @@ export const earthBreaker: CreatureCard = {
     <>
       <Trigger />
       <BodyText>
-        When a card enters play next to this card, gain 2 {SYMBOL_ENERGY}.
+        When a card enters play next to this card, you can exhaust this card: gain 1{SYMBOL_ENERGY}.
       </BodyText>
     </>,
     <Flavor>
@@ -21,7 +21,7 @@ export const earthBreaker: CreatureCard = {
     </Flavor>
   ],
   constructionCost: 3,
-  power: 2,
+  power: 1,
   toughness: 3,
   tags: ["generator"],
 }
@@ -47,7 +47,7 @@ export const fieldhand: CreatureCard = {
   ],
   constructionCost: 2,
   power: 1,
-  toughness: 3,
+  toughness: 2,
   tags: ["starter"],
 }
 
@@ -141,7 +141,7 @@ export const naturesReclaimant: CreatureCard = {
   ],
   constructionCost: 3,
   power: 2,
-  toughness: 3,
+  toughness: 2,
   tags: ["interaction"],
 }
 
@@ -167,7 +167,7 @@ export const lifetender: CreatureCard = {
   type: "creature",
   name: "Lifetender",
   color: "green",
-  cost: 3,
+  cost: 4,
   image: "lifetender",
   nodes: [
     <BodyText>Adjacent creatures gain +1/+1</BodyText>,
@@ -177,7 +177,7 @@ export const lifetender: CreatureCard = {
   ],
   constructionCost: 3,
   power: 1,
-  toughness: 3,
+  toughness: 2,
   tags: ["identity"],
 }
 
@@ -194,8 +194,8 @@ export const nightwatchman: CreatureCard = {
     </Flavor>
   ],
   constructionCost: 3,
-  power: 2,
-  toughness: 4,
+  power: 1,
+  toughness: 3,
   tags: ["consistency"],
 }
 
