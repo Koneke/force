@@ -31,7 +31,7 @@ export const fieldhand: CreatureCard = {
   name: "Fieldhand",
   color: "green",
   cost: 2,
-  image: "farmer",
+  image: "fieldhand",
   nodes: [
     <>
       <Enter />
@@ -56,7 +56,7 @@ export const greenReaper: CreatureCard = {
   name: "Green Reaper",
   color: "green",
   cost: 3,
-  image: "farmer",
+  image: "green-reaper",
   nodes: [
     <>
       <Exhaust />
@@ -79,7 +79,7 @@ export const motherOfAllBloom: CreatureCard = {
   name: "Mother of All Bloom",
   color: "green",
   cost: 5,
-  image: "farmer",
+  image: "mother-of-all-bloom",
   nodes: [
     <>
       <Enter />
@@ -103,7 +103,7 @@ export const composter: CreatureCard = {
   name: "Composter",
   color: "green",
   cost: 2,
-  image: "farmer",
+  image: "composter",
   nodes: [
     <>
       <Trigger />
@@ -127,7 +127,7 @@ export const naturesReclaimant: CreatureCard = {
   name: "Nature's Reclaimant",
   color: "green",
   cost: 3,
-  image: "farmer",
+  image: "natures-reclaimant",
   nodes: [
     <>
       <Enter />
@@ -150,7 +150,7 @@ export const beastOfBurden: CreatureCard = {
   name: "Beast of Burden",
   color: "green",
   cost: 3,
-  image: "farmer",
+  image: "beast-of-burden",
   nodes: [
     <Keyword>Blocker</Keyword>,
     <Flavor>
@@ -168,7 +168,7 @@ export const lifetender: CreatureCard = {
   name: "Lifetender",
   color: "green",
   cost: 3,
-  image: "farmer",
+  image: "lifetender",
   nodes: [
     <BodyText>Adjacent creatures gain +1/+1</BodyText>,
     <Flavor>
@@ -186,7 +186,7 @@ export const nightwatchman: CreatureCard = {
   name: "Nightwatchman",
   color: "green",
   cost: 4,
-  image: "farmer",
+  image: "nightwatchman",
   nodes: [
     <BodyText>This creature gains +1/+0 for each adjacent creature.</BodyText>,
     <Flavor>
@@ -199,16 +199,16 @@ export const nightwatchman: CreatureCard = {
   tags: ["consistency"],
 }
 
-export const strappingYoungLad: CreatureCard = {
+export const strappingYoungLass: CreatureCard = {
   type: "creature",
-  name: "Strapping Young Lad",
+  name: "Strapping Young Lass",
   color: "green",
   cost: 1,
-  image: "farmer",
+  image: "strapping-young-lass",
   nodes: [
     <BodyText>You may replace a Sapling when playing this card. If you do, it gains power equal to that Sapling's toughness.</BodyText>,
     <Flavor>
-      Barely outta the crib, but a farmboy's built different. Eat your veggies, kids.
+      Barely outta the crib, but a farmgirl's built different. Eat your veggies, kids.
     </Flavor>
   ],
   constructionCost: 4,
@@ -223,7 +223,7 @@ export const sapling: CreatureCard = {
   name: "Sapling",
   color: "green",
   cost: 0,
-  image: "farmer",
+  image: "sapling",
   nodes: [
     <>
       <End />
@@ -251,6 +251,6 @@ export const green = [
   beastOfBurden,
   lifetender,
   nightwatchman,
-  strappingYoungLad,
+  strappingYoungLass,
   sapling,
 ]
