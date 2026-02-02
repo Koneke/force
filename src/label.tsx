@@ -38,6 +38,10 @@ export function Death() {
   return <Label color="black">Death</Label>;
 }
 
-export function Ambush() {
-  return <Label color="purple">Ambush</Label>;
+export function Quick() {
+  return <Label color="orange">Quick</Label>;
+}
+
+export function End() {
+  return <Label color="#0088ff">End</Label>;
 }

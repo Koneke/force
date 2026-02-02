@@ -51,7 +51,7 @@ export function CreatureCard({ card }: { card: CreatureCard }) {
       <img src={`./bg-${card.color}.png`} className={styles.pattern} />
       <img src={`./${card.image}.png`} className={styles.image} />
       <div className={styles.header}>
-        <div className={styles.playCost}>{card.cost}</div>
+        {card.cost > 0 && (<div className={styles.playCost}>{card.cost}</div>)}
         <div className={styles.name}>{card.name}</div>
       </div>
       <RulesBox {...card} />
@@ -90,7 +90,7 @@ function RulesBox({
           </span>
         )}
       </div>
-      <div className={styles.constructionCost}>{constructionCost}</div>
+      {constructionCost > 0 && (<div className={styles.constructionCost}>{constructionCost}</div>)}
       <div className={styles.colors}>
         <div className={styles.pip} style={(
           { "--color": toPipColor(color) }
