@@ -38,8 +38,8 @@ export type CreatureCard = {
   image: string;
   nodes: ReactNode[]
   constructionCost: number;
-  power: number;
-  toughness: number;
+  power: number | undefined;
+  toughness: number | undefined;
 
   // For documentation while developing
   tags?: string[]
@@ -96,7 +96,7 @@ function RulesBox({
           { "--color": toPipColor(color) }
         ) as React.CSSProperties } />
       </div>
-      <div className={styles.power}>{power} / {toughness}</div>
+      <div className={styles.power}>{power ?? "?"} / {toughness ?? "?"}</div>
     </div>
   );
 }

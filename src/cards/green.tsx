@@ -21,7 +21,7 @@ export const earthBreaker: CreatureCard = {
     </Flavor>
   ],
   constructionCost: 3,
-  power: 1,
+  power: 2,
   toughness: 3,
   tags: ["generator"],
 }
@@ -36,9 +36,7 @@ export const fieldhand: CreatureCard = {
     <>
       <Enter />
       <BodyText>
-        {/* Hm, annoying that we need spans here, :first-child doesn't work otherwise, */}
-        {/* but let's live with it for now. Second one technically not needed, but consistency */}
-        <span>Create a 0/1 Sapling token next to any creature you control</span>
+          Create a 0/1 Sapling token next to any creature you control.
       </BodyText>
     </>,
     <Flavor>
@@ -61,7 +59,7 @@ export const greenReaper: CreatureCard = {
     <>
       <Exhaust />
       <BodyText>
-        Sacrifice a Sapling token with more than 2 health. Draw 2.
+        Sacrifice a Sapling. Draw a card.
       </BodyText>
     </>,
     <Flavor>
@@ -105,6 +103,9 @@ export const composter: CreatureCard = {
   cost: 2,
   image: "composter",
   nodes: [
+    <BodyText>
+      When this creature attacks, you may spawn a Saplnig token next to a creature you control.
+    </BodyText>,
     <>
       <Trigger />
       <BodyText>
@@ -167,7 +168,7 @@ export const lifetender: CreatureCard = {
   type: "creature",
   name: "Lifetender",
   color: "green",
-  cost: 4,
+  cost: 2,
   image: "lifetender",
   nodes: [
     <BodyText>Adjacent creatures gain +1/+1</BodyText>,
@@ -217,6 +218,29 @@ export const strappingYoungLass: CreatureCard = {
   tags: ["consistency", "identity"],
 }
 
+export const seedsower: CreatureCard = {
+  type: "creature",
+  name: "Seedsower",
+  color: "green",
+  cost: 1,
+  image: "seedsower",
+  nodes: [
+    <>
+      <Enter />
+      <BodyText>
+        Create a Sapling token next to a creature you control.
+      </BodyText>
+    </>,
+    <Flavor>
+      Every forest starts with a single seed.
+    </Flavor>
+  ],
+  constructionCost: 1,
+  power: 1,
+  toughness: 1,
+  tags: ["starter"],
+}
+
 // NOTE: do we need to mark tokens somehow extra?
 export const sapling: CreatureCard = {
   type: "creature",
@@ -241,6 +265,23 @@ export const sapling: CreatureCard = {
   tags: ["token"],
 }
 
+export const bloom: CreatureCard = {
+  type: "creature",
+  name: "Bloom",
+  color: "green",
+  cost: 0,
+  image: "bloom",
+  nodes: [
+    <Flavor>
+      Ah, there it is, the oak.
+    </Flavor>
+  ],
+  constructionCost: 0,
+  power: undefined,
+  toughness: undefined,
+  tags: ["token"],
+}
+
 export const green = [
   earthBreaker,
   fieldhand,
@@ -252,5 +293,7 @@ export const green = [
   lifetender,
   nightwatchman,
   strappingYoungLass,
+  seedsower,
   sapling,
+  bloom,
 ]
