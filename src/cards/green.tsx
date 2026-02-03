@@ -244,6 +244,25 @@ export const seedsower: CreatureCard = {
   tags: ["starter"],
 }
 
+export const stampeder: CreatureCard = {
+  type: "creature",
+  name: "Stampeder",
+  color: "green",
+  cost: 3,
+  image: "stampeder",
+  nodes: [
+    <Keyword>Trample</Keyword>,
+    <Flavor>
+      Have you ever tried stopping one of these with your bare hands?
+      You're still alive, so I'm guessing no.
+    </Flavor>
+  ],
+  constructionCost: 2,
+  power: 3,
+  toughness: 3,
+  tags: ["roleplayer"],
+}
+
 // NOTE: do we need to mark tokens somehow extra?
 export const sapling: CreatureCard = {
   type: "creature",
@@ -297,6 +316,7 @@ export const green = [
   nightwatchman,
   strappingYoungLass,
   seedsower,
+  stampeder,
   sapling,
   bloom,
 ]
