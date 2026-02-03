@@ -1,6 +1,6 @@
 import { CreatureCard } from "../card";
 import { BodyText, Flavor, Keyword } from "../typography";
-import { Death, Enter, Exhaust, Trigger } from "../label";
+import { Death, Enter, Exhaust, Once, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
 
 export const southstreetVandal: CreatureCard = {
@@ -58,7 +58,7 @@ export const triggerman: CreatureCard = {
   image: "southstreet-vandal",
   nodes: [
     <>
-      <Exhaust />
+      <Once />
       <BodyText>Sacrifice another creature, gain 2{SYMBOL_ENERGY}.</BodyText>
     </>,
     <Flavor>
@@ -75,9 +75,15 @@ export const blackmarketDealer: CreatureCard = {
   type: "creature",
   name: "Blackmarket Dealer",
   color: "black",
-  cost: 4,
+  cost: 3,
   image: "blackmarket-dealer",
   nodes: [
+    <>
+      <Enter />
+      <BodyText>
+        Mill 2, draw 1.
+      </BodyText>
+    </>,
     <>
       <Trigger />
       <BodyText>
@@ -252,6 +258,27 @@ export const treasureDiver: CreatureCard = {
   tags: ["extender"],
 }
 
+export const complexSadist: CreatureCard = {
+  type: "creature",
+  name: "Complex Sadist",
+  color: "black",
+  cost: 3,
+  image: "complex-sadist",
+  nodes: [
+    <BodyText>
+      Whenever a creature dies, gain 1{SYMBOL_ENERGY}.
+    </BodyText>,
+    <Flavor>
+      6th street, 6th floor, 6th door on the left.
+      Because what's a little pain among friends?
+    </Flavor>,
+  ],
+  constructionCost: 5,
+  power: 1,
+  toughness: 2,
+  tags: ["generator"],
+}
+
 export const black = [
   southstreetVandal,
   recklessScavenger,
@@ -264,4 +291,5 @@ export const black = [
   blackmailer,
   infiltrator,
   treasureDiver,
+  complexSadist,
 ]

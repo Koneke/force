@@ -103,9 +103,12 @@ export const composter: CreatureCard = {
   cost: 2,
   image: "composter",
   nodes: [
-    <BodyText>
-      When this creature attacks, you may spawn a Saplnig token next to a creature you control.
-    </BodyText>,
+    <>
+      <Trigger />
+      <BodyText>
+        When this creature attacks, you may spawn a Sapling token next to a creature you control.
+      </BodyText>
+    </>,
     <>
       <Trigger />
       <BodyText>
