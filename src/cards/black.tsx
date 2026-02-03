@@ -266,7 +266,8 @@ export const complexSadist: CreatureCard = {
   image: "complex-sadist",
   nodes: [
     <BodyText>
-      Whenever a creature dies, gain 1{SYMBOL_ENERGY}.
+      <Trigger />
+      Whenever a friendly creature dies, gain 1{SYMBOL_ENERGY}.
     </BodyText>,
     <Flavor>
       6th street, 6th floor, 6th door on the left.
