@@ -67,8 +67,6 @@ export function Card({ card }: { card: Card }) {
     case "creature": return <CreatureCard card={card} />
     case "action": return <ActionCard card={card} />
   }
-
-  return null
 }
 
 export function ActionCard({ card }: { card: ActionCard }) {
