@@ -1,4 +1,4 @@
-import { CreatureCard } from "../card";
+import { ActionCard, CreatureCard } from "../card";
 import { BodyText, Flavor, Keyword } from "../typography";
 import { Death, Enter, Exhaust, Once, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
@@ -278,6 +278,21 @@ export const complexSadist: CreatureCard = {
   power: 1,
   toughness: 2,
   tags: ["generator"],
+}
+
+export const mercyKill: ActionCard = {
+  type: "action",
+  name: "Mercy Kill",
+  color: "black",
+  cost: 2,
+  image: "backstreet-brawler",
+  nodes: [
+    <BodyText>
+      Deal 3 damage to target exhausted creature.
+    </BodyText>
+  ],
+  constructionCost: 2,
+  tags: ["interaction"],
 }
 
 export const black = [

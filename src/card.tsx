@@ -71,19 +71,29 @@ export function Card({ card }: { card: Card }) {
 
 export function ActionCard({ card }: { card: ActionCard }) {
   return (
-    <div className={classNames(styles.root, toCssClass(card.color))}>
-      <img src={`./bg-${card.color}.png`} className={styles.pattern} />
-      <img src={`./${card.image}.png`} className={styles.image} />
-      <div className={styles.header}>
-        {card.cost > 0 && (<div className={styles.playCost}>{card.cost}</div>)}
-        <div className={styles.name}>{card.name}</div>
-      </div>
+    <BaseCard card={card}>
       <RulesBox {...card} />
-    </div>
+    </BaseCard>
   );
 }
 
 export function CreatureCard({ card }: { card: CreatureCard }) {
+  return (
+    <BaseCard card={card}>
+      <RulesBox {...card}>
+        <PowerHealthBox {...card} />
+      </RulesBox>
+    </BaseCard>
+  );
+}
+
+function BaseCard({
+  card,
+  children
+}: {
+  card: Card
+  children: ReactNode
+}) {
   return (
     <div className={classNames(styles.root, toCssClass(card.color))}>
       <img src={`./bg-${card.color}.png`} className={styles.pattern} />
@@ -92,9 +102,7 @@ export function CreatureCard({ card }: { card: CreatureCard }) {
         {card.cost > 0 && (<div className={styles.playCost}>{card.cost}</div>)}
         <div className={styles.name}>{card.name}</div>
       </div>
-      <RulesBox {...card}>
-        <PowerHealthBox {...card} />
-      </RulesBox>
+      {children}
     </div>
   );
 }
