@@ -1,4 +1,4 @@
-import { CreatureCard } from "./card";
+import { Card } from "./card";
 import { black } from "./cards/black";
 import { red } from "./cards/red";
 import { green } from "./cards/green";
@@ -9,10 +9,10 @@ import "./App.css";
 function App() {
   return (
     <div className="wrapper">
-      {black.map(card => <CreatureCard card={card} />)}
-      {red.map(card => <CreatureCard card={card} />)}
-      {yellow.map(card => <CreatureCard card={card} />)}
-      {green.map(card => <CreatureCard card={card} />)}
+      {black.map(card => <Card card={card} />)}
+      {red.map(card => <Card card={card} />)}
+      {yellow.map(card => <Card card={card} />)}
+      {green.map(card => <Card card={card} />)}
     </div>
   );
 }

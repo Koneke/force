@@ -1,4 +1,4 @@
-import { CreatureCard } from "../card";
+import { ActionCard, CreatureCard } from "../card";
 import { BodyText, Flavor, Keyword } from "../typography";
 import { End, Enter, Exhaust, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
@@ -304,6 +304,24 @@ export const bloom: CreatureCard = {
   tags: ["token"],
 }
 
+export const rampage: ActionCard = {
+  type: "action",
+  name: "Rampage",
+  color: "green",
+  cost: 4,
+  image: "stampeder",
+  nodes: [
+    <BodyText>
+      All your creatures gain <Keyword>Trample</Keyword> until end of turn.
+    </BodyText>,
+    <Flavor>
+      Ah, there it is, the oak.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["pressure"],
+}
+
 export const green = [
   earthBreaker,
   fieldhand,
@@ -319,4 +337,5 @@ export const green = [
   stampeder,
   sapling,
   bloom,
+  rampage,
 ]

@@ -45,7 +45,33 @@ export type CreatureCard = {
   tags?: string[]
 }
 
-export function CreatureCard({ card }: { card: CreatureCard }) {
+export type ActionCard = {
+  type: "action";
+  name: string;
+  color: Color;
+  cost: number;
+  image: string;
+  nodes: ReactNode[]
+  constructionCost: number;
+
+  // For documentation while developing
+  tags?: string[]
+}
+
+export type Card =
+  | CreatureCard
+  | ActionCard
+
+export function Card({ card }: { card: Card }) {
+  switch (card.type) {
+    case "creature": return <CreatureCard card={card} />
+    case "action": return <ActionCard card={card} />
+  }
+
+  return null
+}
+
+export function ActionCard({ card }: { card: ActionCard }) {
   return (
     <div className={classNames(styles.root, toCssClass(card.color))}>
       <img src={`./bg-${card.color}.png`} className={styles.pattern} />
@@ -59,20 +85,34 @@ export function CreatureCard({ card }: { card: CreatureCard }) {
   );
 }
 
+export function CreatureCard({ card }: { card: CreatureCard }) {
+  return (
+    <div className={classNames(styles.root, toCssClass(card.color))}>
+      <img src={`./bg-${card.color}.png`} className={styles.pattern} />
+      <img src={`./${card.image}.png`} className={styles.image} />
+      <div className={styles.header}>
+        {card.cost > 0 && (<div className={styles.playCost}>{card.cost}</div>)}
+        <div className={styles.name}>{card.name}</div>
+      </div>
+      <RulesBox {...card}>
+        <PowerHealthBox {...card} />
+      </RulesBox>
+    </div>
+  );
+}
+
 function RulesBox({
   color,
   constructionCost,
   nodes,
-  power,
-  toughness,
   tags,
+  children,
 }: {
   color: CreatureCard["color"];
   constructionCost: number;
   nodes: ReactNode[] | undefined
-  power: CreatureCard["power"],
-  toughness: CreatureCard["toughness"],
   tags?: CreatureCard["tags"]
+  children?: ReactNode
 }) {
   return (
     <div className={styles.rules}>
@@ -96,9 +136,21 @@ function RulesBox({
           { "--color": toPipColor(color) }
         ) as React.CSSProperties } />
       </div>
-      <div className={styles.power}>{power ?? "?"} / {toughness ?? "?"}</div>
+      {children}
     </div>
   );
+}
+
+export function PowerHealthBox({
+  power,
+  toughness,
+}: {
+  power: CreatureCard["power"],
+  toughness: CreatureCard["toughness"],
+}) {
+  return (
+    <div className={styles.power}>{power ?? "?"} / {toughness ?? "?"}</div>
+  )
 }
 
 function Divider() {
