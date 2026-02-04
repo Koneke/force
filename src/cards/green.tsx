@@ -309,7 +309,7 @@ export const rampage: ActionCard = {
   name: "Rampage",
   color: "green",
   cost: 4,
-  image: "stampeder",
+  image: "rampage",
   nodes: [
     <BodyText>
       All your creatures gain <Keyword>Trample</Keyword> until end of turn.
@@ -327,7 +327,7 @@ export const springHarvest: ActionCard = {
   name: "Spring Harvest",
   color: "green",
   cost: 1,
-  image: "stampeder",
+  image: "spring-harvest",
   nodes: [
     <BodyText>
       Sacrifice a Sapling, gain {SYMBOL_ENERGY} equal to its health.
@@ -345,7 +345,7 @@ export const growthSpurt: ActionCard = {
   name: "Growth Spurt",
   color: "green",
   cost: 2,
-  image: "stampeder",
+  image: "growth-spurt",
   nodes: [
     <>
       <Quick />
@@ -366,7 +366,7 @@ export const thornbite: ActionCard = {
   name: "Thornbite",
   color: "green",
   cost: 2,
-  image: "stampeder",
+  image: "thornbite",
   nodes: [
     <>
       <Quick />

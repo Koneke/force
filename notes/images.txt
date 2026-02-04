@@ -16,6 +16,10 @@ nightwatchman https://unsplash.com/photos/a-person-riding-a-horse-G7GqclWeXCQ
 seedsower https://unsplash.com/photos/man-in-white-shirt-planting-at-daytime-1JgUGDdcWnM
 bloom https://unsplash.com/photos/green-leaf-covering-tree-branch-lD2Ah5thV2U
 stampeder https://unsplash.com/photos/brown-bull-BRlC_xTVhLY
+rampage https://unsplash.com/photos/a-group-of-cows-walk-through-a-grassy-field-FTYXfOGVgtg
+spring harvest https://unsplash.com/photos/pink-and-yellow-flower-in-bloom-during-daytime-1HHrdIoLFpU
+growth spurt https://unsplash.com/photos/three-pupas-VMKBFR6r_jg
+thornbite https://unsplash.com/photos/a-close-up-of-a-plant-with-white-flowers-D1e8xet8XTk
 
 yellow
 savvy trader https://unsplash.com/photos/a-couple-of-men-standing-next-to-a-pile-of-vegetables-6fkxRn5YAg8
@@ -32,6 +36,9 @@ security detail https://unsplash.com/photos/man-in-green-crew-neck-top-standing-
 infiltrator https://unsplash.com/photos/a-close-up-of-a-camera-on-a-table-J7F5RStDuR4
 treasure diver https://unsplash.com/photos/woman-sitting-on-plastic-trash-bin-on54yn2Eqdc
 blackmarket dealer https://unsplash.com/photos/men-with-assault-rifles-TQuQh4xxPJg
+mercy kill https://unsplash.com/photos/woman-holding-pistol-AEP4lyBafBs
+shady dealings https://unsplash.com/photos/people-standing-inside-city-building-3fPXt37X6UQ
+resuscitate https://unsplash.com/photos/grayscale-photo-of-man-and-woman-lying-on-grass-field-jgPCUsXMRqU
 
 pattern
 cardback https://unsplash.com/photos/spiral-ladder-photography-zaM9LhySx_0

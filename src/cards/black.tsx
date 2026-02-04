@@ -287,7 +287,7 @@ export const mercyKill: ActionCard = {
   name: "Mercy Kill",
   color: "black",
   cost: 2,
-  image: "backstreet-brawler",
+  image: "mercy-kill",
   nodes: [
     <>
       <Quick />
@@ -309,7 +309,7 @@ export const shadyDealings: ActionCard = {
   name: "Shady Dealings",
   color: "black",
   cost: 2,
-  image: "backstreet-brawler",
+  image: "shady-dealings",
   nodes: [
     <BodyText>
       Pay 2 life, draw 2 cards.
@@ -327,7 +327,7 @@ export const resuscitate: ActionCard = {
   name: "Resuscitate",
   color: "black",
   cost: 2,
-  image: "backstreet-brawler",
+  image: "resuscitate",
   nodes: [
     <BodyText>
       Mill 2, then return a creature from your graveyard to your hand.
