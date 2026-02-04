@@ -1,6 +1,6 @@
 import { ActionCard, CreatureCard } from "../card";
 import { BodyText, Flavor, Keyword } from "../typography";
-import { End, Enter, Exhaust, Trigger } from "../label";
+import { End, Enter, Exhaust, Quick, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
 
 export const earthBreaker: CreatureCard = {
@@ -315,11 +315,90 @@ export const rampage: ActionCard = {
       All your creatures gain <Keyword>Trample</Keyword> until end of turn.
     </BodyText>,
     <Flavor>
-      Ah, there it is, the oak.
+      One animal? No biggie. A horde? Hm.
     </Flavor>
   ],
   constructionCost: 3,
   tags: ["pressure"],
+}
+
+export const springHarvest: ActionCard = {
+  type: "action",
+  name: "Spring Harvest",
+  color: "green",
+  cost: 1,
+  image: "stampeder",
+  nodes: [
+    <BodyText>
+      Sacrifice a Sapling, gain {SYMBOL_ENERGY} equal to its health.
+    </BodyText>,
+    <Flavor>
+      With spring comes joy. Toil paying off.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["generator"],
+}
+
+export const growthSpurt: ActionCard = {
+  type: "action",
+  name: "Growth Spurt",
+  color: "green",
+  cost: 2,
+  image: "stampeder",
+  nodes: [
+    <>
+      <Quick />
+      <BodyText>
+        Target creature gets +2/+2 until end of turn.
+      </BodyText>
+    </>,
+    <Flavor>
+      Nothing at all, nothing at all, all at once.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["pressure"],
+}
+
+export const thornbite: ActionCard = {
+  type: "action",
+  name: "Thornbite",
+  color: "green",
+  cost: 2,
+  image: "stampeder",
+  nodes: [
+    <>
+      <Quick />
+      <BodyText>
+        Sacrifice a Sapling. Deal damage to target creature equal to that Sapling's health.
+      </BodyText>
+    </>,
+    <Flavor>
+      Don't get close.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["interaction"],
+}
+
+export const dustToDust: ActionCard = {
+  type: "action",
+  name: "Dust to Dust",
+  color: "green",
+  cost: 3,
+  image: "stampeder",
+  nodes: [
+    <BodyText>
+      Replace a creature you control with a Sapling.
+      Replace a creature your opponent controls with a Sapling.
+    </BodyText>,
+    <Flavor>
+      From bloom, to decay, to soil, to life.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["interaction"],
 }
 
 export const green = [
@@ -338,4 +417,7 @@ export const green = [
   sapling,
   bloom,
   rampage,
+  springHarvest,
+  growthSpurt,
+  thornbite,
 ]

@@ -1,6 +1,6 @@
 import { ActionCard, CreatureCard } from "../card";
 import { BodyText, Flavor, Keyword } from "../typography";
-import { Death, Enter, Exhaust, Once, Trigger } from "../label";
+import { Death, Enter, Exhaust, Once, Quick, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
 
 export const southstreetVandal: CreatureCard = {
@@ -265,10 +265,12 @@ export const complexSadist: CreatureCard = {
   cost: 3,
   image: "complex-sadist",
   nodes: [
-    <BodyText>
+    <>
       <Trigger />
-      Whenever a friendly creature dies, gain 1{SYMBOL_ENERGY}.
-    </BodyText>,
+      <BodyText>
+        Whenever a friendly creature dies, gain 1{SYMBOL_ENERGY}.
+      </BodyText>
+    </>,
     <Flavor>
       6th street, 6th floor, 6th door on the left.
       Because what's a little pain among friends?
@@ -287,12 +289,55 @@ export const mercyKill: ActionCard = {
   cost: 2,
   image: "backstreet-brawler",
   nodes: [
-    <BodyText>
-      Deal 3 damage to target exhausted creature.
-    </BodyText>
+    <>
+      <Quick />
+      <BodyText>
+        Deal 3 damage to target exhausted creature.
+      </BodyText>
+    </>,
+    <Flavor>
+      Sometimes, there's just nothing else you can do but grant a quick death.
+    </Flavor>
   ],
   constructionCost: 2,
   tags: ["interaction"],
+}
+
+// NOTE: Probably busted; draw 1? Draw 1 but cheaper energy wise? More damage?
+export const shadyDealings: ActionCard = {
+  type: "action",
+  name: "Shady Dealings",
+  color: "black",
+  cost: 2,
+  image: "backstreet-brawler",
+  nodes: [
+    <BodyText>
+      Pay 2 life, draw 2 cards.
+    </BodyText>,
+    <Flavor>
+      Pay no mind, get no trouble.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["consistency"],
+}
+
+export const resuscitate: ActionCard = {
+  type: "action",
+  name: "Resuscitate",
+  color: "black",
+  cost: 2,
+  image: "backstreet-brawler",
+  nodes: [
+    <BodyText>
+      Mill 2, then return a creature from your graveyard to your hand.
+    </BodyText>,
+    <Flavor>
+      We all fall, some of us get back up.
+    </Flavor>
+  ],
+  constructionCost: 3,
+  tags: ["consistency"],
 }
 
 export const black = [
@@ -308,4 +353,7 @@ export const black = [
   infiltrator,
   treasureDiver,
   complexSadist,
+  mercyKill,
+  shadyDealings,
+  resuscitate,
 ]
