@@ -7,6 +7,7 @@ Key changes:
 - Triggerman: From [Exhaust] to [Once] (i.e. OPT). Might be too strong, especially with Sadist. But previously, using trigger (which we want) would lock it down to hard. Might be alleviated by rest though. Evaluate
 
 # Deck list
+
 p1 deck: (green test 2)
 1x beast of burden
 2x green reaper
@@ -36,6 +37,7 @@ p2 deck: (black test 2) (updated)
 = 22
 
 # Starting hands
+
 p1
 - reaper - dropped (duplicate)
 - reaper
