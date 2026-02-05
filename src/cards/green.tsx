@@ -2,18 +2,19 @@ import { ActionCard, CreatureCard } from "../card";
 import { BodyText, Flavor, Keyword } from "../typography";
 import { End, Enter, Exhaust, Quick, Trigger } from "../label";
 import { SYMBOL_ENERGY } from "../symbols";
+import { KeywordShift } from "./templating";
 
 export const earthBreaker: CreatureCard = {
   type: "creature",
   name: "Earthbreaker",
   color: "green",
-  cost: 3,
+  cost: 2,
   image: "farmer",
   nodes: [
     <>
       <Trigger />
       <BodyText>
-        When a card enters play next to this card, you can exhaust this card: gain 1{SYMBOL_ENERGY}.
+        When a card enters play next to this card, gain 2{SYMBOL_ENERGY}.
       </BodyText>
     </>,
     <Flavor>
@@ -21,7 +22,7 @@ export const earthBreaker: CreatureCard = {
     </Flavor>
   ],
   constructionCost: 3,
-  power: 2,
+  power: 1,
   toughness: 3,
   tags: ["generator"],
 }
@@ -34,9 +35,9 @@ export const fieldhand: CreatureCard = {
   image: "fieldhand",
   nodes: [
     <>
-      <Enter />
+      <Trigger />
       <BodyText>
-          Create a 0/1 Sapling token next to any creature you control.
+        When a card enters play next to this card, draw a card.
       </BodyText>
     </>,
     <Flavor>
@@ -56,18 +57,18 @@ export const greenReaper: CreatureCard = {
   cost: 3,
   image: "green-reaper",
   nodes: [
-    <>
-      <Exhaust />
-      <BodyText>
-        Sacrifice a Sapling. Draw a card.
-      </BodyText>
-    </>,
+    <KeywordShift>
+      Draw a card.
+    </KeywordShift>,
+    <BodyText>
+      This gets +1/+0 for each adjacent creature.
+    </BodyText>,
     <Flavor>
       You reap what you sow.
     </Flavor>
   ],
   constructionCost: 2,
-  power: 1,
+  power: 3,
   toughness: 2,
   tags: ["extender"],
 }
@@ -80,10 +81,14 @@ export const motherOfAllBloom: CreatureCard = {
   image: "mother-of-all-bloom",
   nodes: [
     <>
-      <Enter />
       <BodyText>
-        Replace any number of Sapling tokens you control with a Bloom token
-        with <Keyword>Trample</Keyword>, and power and health equal to the health of the replaced Sapling token.
+        Adjacent creatures get +3/+3 and <Keyword>Trample</Keyword>.
+      </BodyText>
+    </>,
+    <>
+      <Exhaust />
+      <BodyText>
+        Target creature gains <Keyword>Trample</Keyword> until end of turn.
       </BodyText>
     </>,
     <Flavor>
@@ -103,17 +108,13 @@ export const composter: CreatureCard = {
   cost: 2,
   image: "composter",
   nodes: [
+    <KeywordShift>
+      This gets +1/+1.
+    </KeywordShift>,
     <>
       <Trigger />
       <BodyText>
-        When this creature attacks, you may spawn a Sapling token next to a creature you control.
-      </BodyText>
-    </>,
-    <>
-      <Trigger />
-      <BodyText>
-        When a friendly creature dies, you may exhaust this:
-        Create a Sapling token next to a creature you control.
+        Whenever a friendly creature dies, you can exhaust this card: Target creatures gets +1/+1.
       </BodyText>
     </>,
     <Flavor>
@@ -174,7 +175,7 @@ export const lifetender: CreatureCard = {
   cost: 2,
   image: "lifetender",
   nodes: [
-    <BodyText>Adjacent creatures gain +1/+1</BodyText>,
+    <BodyText>Adjacent creatures get +1/+1</BodyText>,
     <Flavor>
       We're nothing without our friends, so take my hand.
     </Flavor>
@@ -192,14 +193,17 @@ export const nightwatchman: CreatureCard = {
   cost: 4,
   image: "nightwatchman",
   nodes: [
-    <BodyText>This creature gains +1/+0 for each adjacent creature.</BodyText>,
+    <Keyword>Trample</Keyword>,
+    <BodyText>
+      This creature gets +1/+1 for each adjacent creature.
+    </BodyText>,
     <Flavor>
       The night is dark and full of horrors, luckily, Jonah is out there as well.
     </Flavor>
   ],
   constructionCost: 3,
-  power: 1,
-  toughness: 3,
+  power: 2,
+  toughness: 1,
   tags: ["consistency"],
 }
 
@@ -210,7 +214,9 @@ export const strappingYoungLass: CreatureCard = {
   cost: 1,
   image: "strapping-young-lass",
   nodes: [
-    <BodyText>You may replace a Sapling when playing this card. If you do, it gains power equal to that Sapling's toughness.</BodyText>,
+    <KeywordShift>
+      This gets +1/+0 for each adjacent creature.
+    </KeywordShift>,
     <Flavor>
       Barely outta the crib, but a farmgirl's built different. Eat your veggies, kids.
     </Flavor>
@@ -229,9 +235,9 @@ export const seedsower: CreatureCard = {
   image: "seedsower",
   nodes: [
     <>
-      <Enter />
+      <End />
       <BodyText>
-        Create a Sapling token next to a creature you control.
+        Target creature gets +1/+1.
       </BodyText>
     </>,
     <Flavor>
@@ -274,7 +280,7 @@ export const sapling: CreatureCard = {
     <>
       <End />
       <BodyText>
-        Gain +0/+1.
+        Get +0/+1.
       </BodyText>
     </>,
     <Flavor>
@@ -330,7 +336,7 @@ export const springHarvest: ActionCard = {
   image: "spring-harvest",
   nodes: [
     <BodyText>
-      Sacrifice a Sapling, gain {SYMBOL_ENERGY} equal to its health.
+      Return target creature you control to your hand, gain {SYMBOL_ENERGY} equal to its health.
     </BodyText>,
     <Flavor>
       With spring comes joy. Toil paying off.
@@ -371,7 +377,7 @@ export const thornbite: ActionCard = {
     <>
       <Quick />
       <BodyText>
-        Sacrifice a Sapling. Deal damage to target creature equal to that Sapling's health.
+        Target creature you control fights target creature.
       </BodyText>
     </>,
     <Flavor>
