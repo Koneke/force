@@ -190,7 +190,7 @@ export const nightwatchman: CreatureCard = {
   type: "creature",
   name: "Nightwatchman",
   color: "green",
-  cost: 4,
+  cost: 3,
   image: "nightwatchman",
   nodes: [
     <Keyword>Trample</Keyword>,
@@ -314,7 +314,7 @@ export const rampage: ActionCard = {
   type: "action",
   name: "Rampage",
   color: "green",
-  cost: 4,
+  cost: 3,
   image: "rampage",
   nodes: [
     <BodyText>
